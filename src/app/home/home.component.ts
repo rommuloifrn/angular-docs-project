@@ -15,7 +15,7 @@ import { HousingService } from '../housing.service';
     <section>
       <form>
         <input type="text" placeholder="Filter by city" #filter>
-        <button class="primary" type="input"
+        <button class="primary" type="button"
         (click)="filterResults(filter.value)" >Search</button>
       </form>
     </section>
@@ -42,6 +42,7 @@ export class HomeComponent {
     this.filteredLocationList = this.housingLocationList.filter(
       housingLocation => housingLocation?.city.toLowerCase().includes(text.toLowerCase())
     );
+    console.log(this.filteredLocationList);
   }
 
   constructor() {
